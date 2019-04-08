@@ -135,6 +135,61 @@ INSERT INTO utilisateur VALUES
 (75, ‘Brooks’, ‘Chloe’, ‘chloe.brooks@gmail.com’, ‘CBrooks’, ‘chloe123’),
 (76, ‘Kelly’, ‘Anna’, ‘anna.kelly@sympatico.ca’, ‘AKelly’, ‘anna123’); 
 
+
+INSERT INTO PRODUIT (id_produit, categorie, prix_annonceur, titre, description, statut) VALUES
+
+(1, ‘meuble’, 50.00, ‘Divan’, ‘très peu utilise, état comme neuf’, ‘attente’)
+(2, ‘vetement’, 20.00, ’chandail’, ’chandail marque cos’, ‘attente’),
+(3, ‘vetement’, 30.00, ‘chemise’, ‘neuf’, ‘estimed’),
+(4, ‘vetement’, 70.00, ‘robe’, NULL, ‘attente’),
+(5, ‘vêtement’, 34.00, ‘chaussure’, ‘tout a fait nouveau’, ‘validate’),
+(6, ‘vetement’, 33.00, ‘chaussure’, ‘limited edition’, ‘attente’),
+(7, ‘bebe’, 100.00, ‘nouveau ne’, ‘poussette’, ‘attente’),
+(8, ‘maison’, 70.00, ‘objet de decoration’, ‘vase rouge’, ‘attente’),
+(9, ‘maison’, 200.00, ‘electromenager’, ‘humidifier’, ‘attente’),
+(10, ‘maison’, 300.00, ‘electromenager’, ‘aspirateur dyson’, ‘estimed’),
+(11, ‘location’, 1000.00, ‘appartement’, ‘près de la station berri’, ‘attente’),
+(12, ‘bebe’, 30.00, ’6mois’, ’chandail’, ‘attente’),
+(13, ‘bebe’, 10.00, ‘chapeau bleu’, ‘usagé’, ‘estimed’),
+(14, ‘meuble’, 200.00, ‘chaise’, ‘chaise pour outdoor’, ‘attente’),
+(15, ‘meuble’, 1000.00, ‘chaise’, ‘chaise pour le bureau’, ‘validate’),
+(16, ‘meuble’, 40.00, ‘chaise’, ‘stool’, ‘estimed’),
+(17, ‘meuble’, 200.00, ‘table’, ‘table pour outdoor’, ‘attente’),
+(18, ‘meuble’, 500.00, ‘table’, ‘table en bois’, ‘validate’),
+(19, ‘loisir’, 20.00, ‘jeux video’, ‘supermario classique’, ‘attente’),
+(20, ‘loisir’, 30.00, ‘jeux video’, ‘supermario 3D’, ‘attente’),
+(21, ‘loisir’, 10.00, ‘jeux video’, ‘cart mario’, ‘attente’)
+(22, ‘vetement’, 20.00, ’pantalon’, ’levis jean’, ‘attente’),
+(23, ‘vetement’, 30.00, ‘pantalon’, ‘jean noir’, ‘estimed’),
+(24, ‘location’, 1500.00, ‘appartement’, ‘près de vieux montreal, 3 et demie’, ‘attente’),
+(25, ‘meuble’, 30.00, ‘futon’, ‘couleur blanche’, ‘attente’),
+(26, ‘maison’, 70.00, ‘vaisselle’, ‘cuiller en argent’, ‘estimed’),
+(27, ‘maison’, 100.00, ‘vaisselle’, ‘baguette en argent’, ‘attente’),
+(28, ‘maison’, 20.00, ‘literie’, ‘oreiller vert’, ‘attente’),
+(29, ‘maison’, 100.00, ‘literie’, ‘couverture’, ‘validate’),
+(30, ‘maison’, 22.00, ‘vaisselle’, ‘assiette à pain’, ‘attente’),
+(31, ‘bebe’, 30.00, ‘12mois’, ‘bebe flip-flop’, ‘validate’)
+(32, ‘bebe’, 20.00, ’18mois’, ’table de bebe’, ‘estimed’),
+(33, ‘bebe’, 30.00, ‘24mois’, ‘jouet interactif’, ‘estimed’),
+(34, ‘bebe’, 70.00, ‘18mois’, ‘fauteuil de bebe’, ‘attente’),
+(35, ‘bebe’, 100.00, ‘6mois’, ‘lit de bebe’, ‘estimed’),
+(36, ‘bebe’, 20.00, ‘12mois’, ‘2 pantalons et 2 chandails’, ‘attente’),
+(37, ‘bebe’, 20.00, ‘18mois’, ‘5 vetements’, ‘attente’),
+(38, ‘loisir’, 10.00, ‘jeu de societe’, ‘blocus game’, ‘attente’),
+(39, ‘loisir’, 10.00, ‘jeu de societe’, ‘opération game’, ‘validate’),
+(40, ‘loisir’, 15.00, ‘jeu de societe’, ‘connect 4 game’, ‘validate’),
+(41, ‘loisir’, 4.00, ‘jeu de carte’, ‘uno card game’, ‘attente’)
+(42, ‘loisir’, 20.00, ’jeu de carte’, ’melissa et doug’, ‘attente’),
+(43, ‘location’, 30.00, ‘maillot de bain’, ‘neuf’, ‘estimed’),
+(44, ‘location’, 70.00, ‘base guitar’, ‘electric bass guitar’, ‘validate’),
+(45, ‘location’, 150.00, ‘speaker’, ‘vintage speaker’, ‘estimed’),
+(46, ‘location’, 600.00, ‘guitar’, ‘fendre elec-guitar’, ‘attente’),
+(47, ‘location’, 50.00, ‘voiture’, ‘hyundai elantra 50dollar par jour’, ‘attente’),
+(48, ‘maison’, 30.00, ‘artwork’, ‘pop art framed ready to hang’, ‘attente’),
+(49, ‘meuble’, 30.00, ‘lampe’, ‘30*20*40 lampe de lit’, ‘validate’),
+(50, ‘meuble’, 79.00, ‘armoire’, ‘wardrobe cabinet’, ‘attente’),
+
+
 ALTER SEQUENCE utilisateurs_num_utilisateur_seq RESTART WITH 2;
 
 INSERT INTO PRODUIT VALUES (1, 'meuble', 50.00, 'Divan', 'très peu utilisé, état comme neuf', 'attente');
