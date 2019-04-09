@@ -187,7 +187,17 @@ INSERT INTO PRODUIT (id_produit, categorie, prix_annonceur, titre, description, 
 (47, ‘location’, 50.00, ‘voiture’, ‘hyundai elantra 50dollar par jour’, ‘attente’),
 (48, ‘maison’, 30.00, ‘artwork’, ‘pop art framed ready to hang’, ‘attente’),
 (49, ‘meuble’, 30.00, ‘lampe’, ‘30*20*40 lampe de lit’, ‘validate’),
-(50, ‘meuble’, 79.00, ‘armoire’, ‘wardrobe cabinet’, ‘attente’),
+(50, ‘meuble’, 79.00, ‘armoire’, ‘wardrobe cabinet’, ‘attente’);
+
+
+INSERT INTO CATEGORIE (id_categorie, nom_categorie) VALUES
+(1, ‘maison’),
+(2, ‘vehement’),
+(3, ‘bebe’),
+(4, ‘location’),
+(5, ‘loisir’),
+(6, ‘meuble’),
+(7, ‘autre’);
 
 
 ALTER SEQUENCE utilisateurs_num_utilisateur_seq RESTART WITH 2;
