@@ -1,0 +1,42 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.LayoutManager;
+
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.Border;
+
+
+	public class InterfaceGraphique2 {
+		   
+	    InterfaceGraphique2(){  
+		 JFrame f= new JFrame("Acheteur");//Créer un objet graphique.
+	
+		 f.setTitle("Achèteur"); 
+		 f.setSize(800,700);          //Définir la taille de l'objet graphique.
+		 //f.setLayout(null); 
+	     f.setLocationRelativeTo(null);
+	     f.setResizable(false);
+	     f.setVisible(true);        
+	     JPanel p = new JPanel ();    //Définir un component JPaneln
+	     p.setLayout(null); 
+	     //p.setBackground(Color.BLUE);
+	     f.add(p);
+	     
+	  
+	     JPanel pDetails = new JPanel (); 
+	     String title = "Details de ";
+	     Border border = BorderFactory.createTitledBorder(title);
+	     pDetails.setBorder(border);
+	     pDetails.setLocation ( 30, 30 ) ;
+	     pDetails.setSize (400, 300) ; 
+	     //p1.setBackground(Color.RED);
+	     p.add(pDetails);
+	     
+	   
+         }
+
+		
+    }

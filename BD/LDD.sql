@@ -20,8 +20,8 @@ CREATE TABLE utilisateur
     CONSTRAINT email_unique UNIQUE (email),
     CONSTRAINT nom_usager_unique UNIQUE (nom_usager)
 );
-INSERT INTO utilisateur VALUES (1, 'nait', 'ounissa', 'ounissa.nait@gmail.com', 'ounissa.nait', 'ounissa123');
-INSERT INTO utilisateur VALUES (2, 'hanoun', 'meshleen', 'meshleen@gmail.com', 'hanoun.mesh', 'meshleen123');
+INSERT INTO utilisateur VALUES (1, 'nait', 'ounissa', 'ounissa.nait@gmail.com', 'ounissa.nait', 'ounissa123', 3);
+INSERT INTO utilisateur VALUES (2, 'hanoun', 'meshleen', 'meshleen@gmail.com', 'hanoun.mesh', 'meshleen123', 5);
 ALTER SEQUENCE utilisateurs_num_utilisateur_seq RESTART WITH 2;
 
 
@@ -35,8 +35,8 @@ CREATE TABLE produit
     CONSTRAINT prix_positif CHECK (prix >= 0::numeric) NOT VALID,
     CONSTRAINT id_annonceur_fkey (id_utilisateur) 
         references utilisateur (id_utilisateur),
-    CONSTRAINT id_sousCategorie_fkey (id_sousCategorie) references
-        categorie (id_sousCategorie)
+    CONSTRAINT id_categorie_fkey (id_categorie) references
+        categorie (id_categorie)
 
 );
 INSERT INTO produit VALUES (1, 'table antique', 'très peu utilisé, état comme neuf', 50.00, 'attente', 5);
@@ -51,7 +51,6 @@ CREATE TABLE estimation
     CONSTRAINT id_expert_fkey (id_expert) references utilisateur (id_utilisateur),
     CONSTRAINT id_produit_fkey (estimation_id_prod) references produit (id_produit)
 );
-
 
 
 CREATE TABLE offre
@@ -77,13 +76,6 @@ CREATE TABLE categorie
 (
     id_categorie serial PRIMARY KEY,
     nom_categorie character varying(50) NOT NULL,
-)
-
-CREATE TABLE sousCategorie 
-(
-    id_sousCategorie serial PRIMARY KEY,
-    nom_sousCategorie character varying(50) NOT NULL,
-    CONSTRAINT id_categorie_fkey (cat_id_souscat) references categorie (id_categorie)
 )
 
 CREATE TABLE region 

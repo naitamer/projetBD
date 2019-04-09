@@ -1,0 +1,90 @@
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.Border;
+
+public class InterfaceGraphiqueAnnonceur {
+	   
+    InterfaceAnnonceur(){  
+	 JFrame f= new JFrame("Annonceur");//Créer un objet graphique.
+	
+	 f.setTitle("Annonceur"); 
+	 f.setSize(900,800);          //Définir la taille de l'objet graphique.
+	// f.setLayout(null); 
+     f.setLocationRelativeTo(null);
+     f.setResizable(false);
+     f.setVisible(true);            //Afficher l'objet graphique
+     
+     JPanel p = new JPanel ();    //Définir un component JPaneln
+     p.setLayout(null); 
+     f.add(p);
+     JButton Jb =new JButton("Ajouter un annonce");      //Créer un bouton.
+     Jb.setBounds(350, 40, 200, 50);                   //Définir la taille du bouton.
+     Jb.setFont(new Font("Serif", Font.BOLD, 20));    //Définir le font.
+     p.add(Jb);     
+    
+     
+     
+     JPanel pDetails_produit = new JPanel (); 
+     String title = "Details de produit";
+     Border border = BorderFactory.createTitledBorder(title);
+     pDetails_produit.setBorder(border);
+     pDetails_produit.setLocation ( 30, 100 ) ;
+     pDetails_produit.setSize (500, 400) ; 
+     pDetails_produit.setLayout(null); 
+   // pDetails_produit.setLayout(new BoxLayout(pDetails_produit, BoxLayout.PAGE_AXIS));
+     p.add(pDetails_produit);
+     
+     JLabel labelPrix_annonce=new JLabel("Prix_annonce :");       //créer les Labels.
+     labelPrix_annonce.setBounds(15,10, 150, 50); 
+     labelPrix_annonce.setFont(new Font("Serif", Font.BOLD, 20));     //Définir le Font des labels.
+     pDetails_produit.add(labelPrix_annonce);
+     
+     JLabel labelDescription=new JLabel("Description :");       //créer les Labels.
+     labelDescription.setBounds(15,10, 150, 170); 
+     labelDescription.setFont(new Font("Serif", Font.BOLD, 20));     //Définir le Font des labels.
+     pDetails_produit.add(labelDescription);
+     
+     JLabel labelcategorie=new JLabel("Catégorie :");       //créer les Labels.
+     labelcategorie.setBounds(15,10, 150, 350); 
+     labelcategorie.setFont(new Font("Serif", Font.BOLD, 20));     //Définir le Font des labels.
+     pDetails_produit.add(labelcategorie);
+     
+
+    
+     JTextField tPrix_annonce = new JTextField();
+     tPrix_annonce.setBounds(150,20,250 , 40); 
+     pDetails_produit.add(tPrix_annonce);
+       
+     JTextField tDescription = new JTextField();
+     tDescription.setBounds(150,90,300 , 70); 
+     pDetails_produit.add(tDescription);
+     
+     Jb.addActionListener(new ActionListener()
+	 {
+		public void actionPerformed(ActionEvent e) 
+		{
+			
+		 }
+		
+	 }
+			 );
+}
+    
+    public static void main(String[] args) {
+      	 final InterfaceAnnonceur UI = new InterfaceAnnonceur(); 
+      	 final InterfaceAcheteur UI2 = new InterfaceAcheteur();
+      	 
+      	 
+      	 
+      }
+}

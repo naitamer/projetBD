@@ -1,0 +1,125 @@
+import java.awt.Font;
+import java.awt.List;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+
+
+import javax.swing.BorderFactory;
+import javax.swing.border.TitledBorder;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.border.Border;
+
+public class InterfaceAnnonceur {
+	//    private final List<String> arrayCategorie=new ArrayList<String>();
+	 //   private final List<String> arraySousCategorie=new ArrayList<String>();
+	private final DefaultListModel modelCategorie = new DefaultListModel();
+    private final DefaultListModel modelSousCategorie = new DefaultListModel();
+	InterfaceAnnonceur(){  
+		JFrame f = new JFrame("Annonceur");//Créer un objet graphique.
+        f.setTitle("Annonceur"); 
+        f.setSize(900,800);          //Définir la taille de l'objet graphique.
+        f.setLayout(null); 
+        f.setLocationRelativeTo(null);
+        f.setResizable(false);
+        f.setVisible(true);            //Afficher l'objet graphique. 
+	    
+	     JButton JbAjoutter =new JButton("Ajouter un annonce");      //Créer un bouton.
+	     JbAjoutter.setBounds(325, 45, 200, 50);                   //Définir la taille du bouton.
+	     JbAjoutter.setFont(new Font("Serif", Font.BOLD, 20));    //Définir le font.
+	     f.add(JbAjoutter);     
+	    
+	     JButton JbSoumetttre =new JButton("Soumettre");      //Créer un bouton.
+	     JbSoumetttre.setBounds(355, 700, 200, 50);                   //Définir la taille du bouton.
+	     JbSoumetttre.setFont(new Font("Serif", Font.BOLD, 20));    //Définir le font.
+	     f.add(JbSoumetttre);  
+	     
+	     JPanel pDetails_produit = new JPanel (); 
+	     String title = "Details de produit";
+	    
+	     Border border = BorderFactory.createTitledBorder(title);
+	     ((TitledBorder) border).setTitleFont(new Font("Serif",Font.BOLD, 25));
+	     pDetails_produit.setBorder(border);
+	     pDetails_produit.setLocation (20, 100 ) ;
+	     pDetails_produit.setSize (850, 590) ; 
+	     pDetails_produit.setLayout(null); 
+	     f.add(pDetails_produit);
+	     
+	     JLabel labelTitreDeProduit=new JLabel("Titre du produit : ");       //créer les Labels.
+	     labelTitreDeProduit.setBounds(15,20, 200, 50); 
+	     labelTitreDeProduit.setFont(new Font("Serif", Font.BOLD, 20));     //Définir le Font des labels.
+	     pDetails_produit.add(labelTitreDeProduit);
+	     
+	     JLabel labelCategorie=new JLabel("Catégorie : ");       //créer les Labels.
+	     labelCategorie.setBounds(15,10, 200, 250); 
+	     labelCategorie.setFont(new Font("Serif", Font.BOLD, 20));     //Définir le Font des labels.
+	     pDetails_produit.add(labelCategorie);
+	     
+	    
+	     JLabel labelSousCategorie=new JLabel("Sous_Catégorie : ");       //créer les Labels.
+	     labelSousCategorie.setBounds(15,10, 200, 450); 
+	     labelSousCategorie.setFont(new Font("Serif", Font.BOLD, 20));     //Définir le Font des labels.
+	     pDetails_produit.add(labelSousCategorie);
+	     
+	     JLabel labelPrixDuProduit=new JLabel("Prix du produit : ");       //créer les Labels.
+	     labelPrixDuProduit.setBounds(15,255, 150, 170); 
+	     labelPrixDuProduit.setFont(new Font("Serif", Font.BOLD, 20));     //Définir le Font des labels.
+	     pDetails_produit.add(labelPrixDuProduit);
+	     
+	     JLabel labelDescription=new JLabel("Description : ");       //créer les Labels.
+	     labelDescription.setBounds(15,300, 250, 170); 
+	     labelDescription.setFont(new Font("Serif", Font.BOLD, 20));     //Définir le Font des labels.
+	     pDetails_produit.add(labelDescription);
+	     
+	     JTextField tTitreDeProduit = new JTextField();
+	     pDetails_produit.add(tTitreDeProduit);
+	     tTitreDeProduit.setBounds(170,20,250 , 40);
+	    
+	     JTextField tPrixDuProduit = new JTextField();
+	     pDetails_produit.add(tPrixDuProduit);
+	     tPrixDuProduit.setBounds(170,325,250,40);
+	       
+	     JTextField tDescription = new JTextField();
+	     pDetails_produit.add(tDescription);
+	     tDescription.setBounds(15,400,820 ,180); 
+	     
+         JList listCategorie = new JList(modelCategorie);         //Créer les Jlist.
+         JList listSousCategorie = new JList(modelSousCategorie);
+         listCategorie.setFont(new Font("SansSerif", Font.PLAIN, 20));//Définir le Font des Ã©lÃ©ments dans liste.
+         listSousCategorie.setFont(new Font("SansSerif", Font.PLAIN, 20));
+         f.add(listCategorie);                             //Ajouter les listes au JFram
+         f.add(listSousCategorie);
+         listCategorie.setBounds(200, 200, 600, 80);       //Définir les tailles et les places des listes.
+         listSousCategorie.setBounds(200, 300, 600, 80);
+         
+         
+	     JbAjoutter.addActionListener(new ActionListener()
+		 {
+			public void actionPerformed(ActionEvent e) 
+			{
+				
+			 }
+			
+		 }
+				 );
+	     
+	     JbSoumetttre.addActionListener(new ActionListener()
+		 {
+			public void actionPerformed(ActionEvent e) 
+			{
+				
+			 }
+			
+		 }
+				 );
+	}
+
+}

@@ -1,0 +1,18 @@
+import javax.swing.JFrame;
+
+public class InterfaceGraphique2 {
+	public class InterfaceGraphique2 {
+		   
+	    InterfaceGraphique(){  
+		 JFrame f= new JFrame("Annonceur");//Créer un objet graphique.
+		 f.setSize(700,500);
+		 f.setTitle("Annonceur"); 
+		 f.setSize(1100,1000);          //Définir la taille de l'objet graphique.
+		 f.setLayout(null); 
+	     f.setLocationRelativeTo(null);
+	     f.setResizable(false);
+	     f.setVisible(true);        
+
+         }
+    }
+}

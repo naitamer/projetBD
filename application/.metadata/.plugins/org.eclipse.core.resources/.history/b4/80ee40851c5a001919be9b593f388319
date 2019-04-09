@@ -1,0 +1,11 @@
+
+public class Main {
+	public static void main(String[] args) {
+		 final InterfaceAnnonceur UI = new InterfaceAnnonceur(); 
+		 final InterfaceAcheteur UI2 = new InterfaceAcheteur();
+		 
+		 
+		 
+	}
+
+}
