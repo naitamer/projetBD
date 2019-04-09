@@ -239,8 +239,8 @@ INSERT INTO produit (id_produit, titre, description, prix_annonceur, statut, id_
 (47, 'voiture', 'hyundai elantra 50dollar par jour', 50.00, 'validated', 74, 4),
 (48, 'artwork', 'pop art framed ready to hang', 30.00, 'refused', 11, 1),
 (49, 'lampe', '30*20*40 lampe de lit', 30.00, 'refused', 6, 6),
-(50, 'armoire', 'wardrobe cabinet', 79.00, 'validated', 6, 6);
-(51, 'divan', 'très peu utilise, état comme neuf', 50.00, 'validated', 75, 6)
+(50, 'armoire', 'wardrobe cabinet', 79.00, 'validated', 6, 6),
+(51, 'divan', 'très peu utilise, état comme neuf', 50.00, 'validated', 75, 6);
 
 ALTER SEQUENCE produit_num_produit_seq RESTART WITH 1;
 
