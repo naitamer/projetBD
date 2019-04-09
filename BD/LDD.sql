@@ -1,3 +1,5 @@
+set search_path to schema_name
+
 
 --création des types
 CREATE TYPE type_produit AS ENUM 
