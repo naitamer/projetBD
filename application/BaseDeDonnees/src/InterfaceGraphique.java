@@ -19,9 +19,7 @@ public class InterfaceGraphique {
     
   }
     public static void main(String[] args) {
-         final ChoisirUtilisateur UI1 = new ChoisirUtilisateur(); 
-     	 //final InterfaceAnnonceur UI2 = new InterfaceAnnonceur();
-    	 //final InterfaceAcheteur UI3 = new InterfaceAcheteur();
+         final ChoisirUtilisateur UI1 = new ChoisirUtilisateur();
   
   }  	 
       

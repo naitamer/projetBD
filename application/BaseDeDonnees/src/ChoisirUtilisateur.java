@@ -14,7 +14,7 @@ public class ChoisirUtilisateur {
 		 JFrame f= new JFrame("Utilisateur");//Créer un objet graphique.
 		
 		 f.setTitle("Utilisateur"); 
-		 f.setSize(600,300);          //Définir la taille de l'objet graphique.
+		 f.setSize(600,350);          //Définir la taille de l'objet graphique.
 	     f.setLayout(null); 
 	     f.setLocationRelativeTo(null);
 	     f.setResizable(false);
@@ -29,7 +29,7 @@ public class ChoisirUtilisateur {
 	     
 	     //Définir RadioButton
 	    
-	     JRadioButton optionAnnonceur = new JRadioButton("Annonceur",true);
+	     JRadioButton optionAnnonceur = new JRadioButton("Annonceur");
 	     JRadioButton optionAcheteur = new JRadioButton ("Acheteur");
 	        
 	     ButtonGroup ButtonGroup = new ButtonGroup ();
@@ -66,7 +66,32 @@ public class ChoisirUtilisateur {
 
 	     JTextField tAdresseCourriel = new JTextField();
 	     f.add(tAdresseCourriel);
-	     tAdresseCourriel.setBounds(200,100,350 ,40); 
+	     tAdresseCourriel.setBounds(200,100,350 ,40);
+
+	     Button connecter = new Button("connecter");
+	     connecter.setVisible(true);
+	     connecter.setFont(new Font("Serif", Font.BOLD, 16));
+		 connecter.setBackground(Color.decode("#F0F8FF"));
+	     f.add(connecter).setBounds(300, 250, 120, 50);
+
+
+	     connecter.addActionListener(new ActionListener() {
+			 @Override
+			 public void actionPerformed(ActionEvent e) {
+			 	// si acheteur
+
+				 if(optionAcheteur.isSelected()){
+
+					 final InterfaceAcheteur UI3 = new InterfaceAcheteur();
+				 }
+
+			 	//si annonceur
+				 if(optionAnnonceur.isSelected()){
+					 final InterfaceAnnonceur UI2 = new InterfaceAnnonceur();
+				 }
+
+			 }
+		 });
 	    
 	    
 	   

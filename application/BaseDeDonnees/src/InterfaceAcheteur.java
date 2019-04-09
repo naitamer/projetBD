@@ -47,8 +47,9 @@ import javax.swing.border.TitledBorder;
 
 	     JbAjoutter.addActionListener(new ActionListener()
 		 {
-			public void actionPerformed(ActionEvent e) 
-			{
+			public void actionPerformed(ActionEvent e) {
+
+
 				
 	     
 	   
