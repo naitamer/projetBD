@@ -12,6 +12,6 @@ vente (id_vente, date_vente, prix_vente, #id_produit, #id_acheteur)
 
 categorie (id_categorie, nom_categorie),
 
-sousCategorie(id_souscategorie, #id_categorie, nom_cousCategorie)
+sousCategorie(id_souscategorie, nom_cousCategorie , #id_categorie)
 
 region(id_region, nom_region)

@@ -4,6 +4,8 @@ import java.util.Date;
  * Created by ounissa on 2019-04-09.
  */
 public class Affichage {
+    private int id_utilisateur;
+
     private String titre;
     private String description;
     private String region;
@@ -16,6 +18,7 @@ public class Affichage {
     private String materiau;
     private String taille;
     private Date datePeremption;
+
 
 
 

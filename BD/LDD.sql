@@ -49,9 +49,9 @@ CREATE TABLE utilisateur
     
 );
 
-INSERT INTO utilisateur VALUES (1, 'nait', 'ounissa', 'ounissa.nait@gmail.com', 'ounissa123', 1);
-INSERT INTO utilisateur VALUES (2, 'hanoun', 'meshleen', 'meshleen@gmail.com', 'meshleen123', 2);
-ALTER SEQUENCE utilisateur_id_utilisateur_seq RESTART WITH 2;
+INSERT INTO utilisateur VALUES (1,'nait', 'ounissa', 'ounissa.nait@gmail.com', 'ounissa123', 1);
+INSERT INTO utilisateur VALUES (2,'hanoun', 'meshleen', 'meshleen@gmail.com', 'meshleen123', 2);
+--ALTER SEQUENCE utilisateur_id_utilisateur_seq RESTART WITH 2;
 
 
 CREATE TABLE produit
@@ -68,8 +68,13 @@ CREATE TABLE produit
     CONSTRAINT categorie_fkey FOREIGN KEY (num_categorie) references category (id_categorie)
 
 );
-INSERT INTO produit VALUES (1, 'table antique', 'très peu utilisée, état comme neuf', 50.00,'waiting', 1, 1);
-ALTER SEQUENCE produit_num_produit_seq RESTART WITH 1;
+ALTER SEQUENCE  produit_id_produit_seq RESTART WITH 1;
+INSERT INTO produit VALUES (default,'table antique', 'très peu utilisée, état comme neuf', 50.00,'waiting', 1, 1);
+INSERT INTO produit VALUES ( default,'table new', 'brand new, état neuf', 100.00,'waiting', 1, 1);
+
+
+
+
 
 
 CREATE TABLE estimation 
