@@ -138,7 +138,7 @@ INSERT INTO utilisateur VALUES
 
 INSERT INTO PRODUIT (id_produit, categorie, prix_annonceur, titre, description, statut) VALUES
 
-(1, ‘meuble’, 50.00, ‘Divan’, ‘très peu utilise, état comme neuf’, ‘attente’)
+(1, ‘meuble’, 50.00, ‘Divan’, ‘très peu utilise, état comme neuf’, ‘attente’),
 (2, ‘vetement’, 20.00, ’chandail’, ’chandail marque cos’, ‘attente’),
 (3, ‘vetement’, 30.00, ‘chemise’, ‘neuf’, ‘estimed’),
 (4, ‘vetement’, 70.00, ‘robe’, NULL, ‘attente’),
