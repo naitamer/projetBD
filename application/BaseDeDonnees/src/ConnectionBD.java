@@ -3,7 +3,11 @@ import java.sql.*;
 /**
  * Created by ounissa on 2019-04-09.
  */
-public class ConnexionBD {
+public class ConnectionBD {
+    public static void main(String[] args) {
+        final ChoisirUtilisateur UI1 = new ChoisirUtilisateur();
+
+    }
     public static Connection connectTobd()  {
         Connection c =null;
         try {

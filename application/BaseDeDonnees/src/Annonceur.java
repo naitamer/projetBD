@@ -2,6 +2,8 @@ import java.awt.Font;
 import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
 
@@ -9,16 +11,23 @@ import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.Border;
 
-public class InterfaceAnnonceur {
+public class Annonceur {
 	//    private final List<String> arrayCategorie=new ArrayList<String>();
 	//   private final List<String> arraySousCategorie=new ArrayList<String>();
 
     private int id_utilisateur;
+    private String data;
+    private  String colonne;
+    Connection c;
+
 
     private final DefaultListModel modelCategorie = new DefaultListModel();
     private final DefaultListModel modelSousCategorie = new DefaultListModel();
-    InterfaceAnnonceur(int idrecu){
-        this.id_utilisateur=idrecu;
+
+    //
+    Annonceur(int id){
+
+        this.id_utilisateur=id;
 
 
         JFrame f = new JFrame("Annonceur");//Créer un objet graphique.
@@ -43,7 +52,7 @@ public class InterfaceAnnonceur {
 
         // panel pour historique offre et vente
         JPanel pMes_Annonce = new JPanel ();
-        String titleMes_Annonce = "Mes annonces";
+        String titleMes_Annonce = "Mes annones";
 
         Border borderMes_Annonce = BorderFactory.createTitledBorder(titleMes_Annonce);
         ((TitledBorder) borderMes_Annonce).setTitleFont(new Font("Serif",Font.BOLD, 25));
@@ -75,10 +84,11 @@ public class InterfaceAnnonceur {
         JbVoirOffre.setFont(new Font("Serif", Font.BOLD, 20));    //Définir le font.
         pMes_Annonce.add(JbVoirOffre);
 
-        JButton JbHistoriqueVente =new JButton("Historique vente");      //Créer un bouton.
-        JbHistoriqueVente.setBounds(80, 200, 200, 50);                   //Définir la taille du bouton.
-        JbHistoriqueVente.setFont(new Font("Serif", Font.BOLD, 20));    //Définir le font.
-        pMes_Annonce.add(JbHistoriqueVente);
+
+        JButton historiqueVente =new JButton("Historique vente");      //Créer un bouton.
+        historiqueVente.setBounds(80, 200, 200, 50);                   //Définir la taille du bouton.
+        historiqueVente.setFont(new Font("Serif", Font.BOLD, 20));    //Définir le font.
+        pMes_Annonce.add(historiqueVente);
 
 
         JLabel labelTitreDeProduit=new JLabel("Titre du produit : ");       //créer les Labels.
@@ -97,6 +107,11 @@ public class InterfaceAnnonceur {
         labelPrixDuProduit.setFont(new Font("Serif", Font.BOLD, 20));     //Définir le Font des labels.
         pDetails_produit.add(labelPrixDuProduit);
 
+        JTextField tPrixDuProduit = new JTextField();
+        pDetails_produit.add(tPrixDuProduit);
+        tPrixDuProduit.setBounds(170,85,345,40);
+
+
         JLabel labelDescription=new JLabel("Description : ");       //créer les Labels.
         labelDescription.setBounds(15,175, 250, 170);
         labelDescription.setFont(new Font("Serif", Font.BOLD, 20));     //Définir le Font des labels.
@@ -107,9 +122,7 @@ public class InterfaceAnnonceur {
         pDetails_produit.add(tTitreDeProduit);
         tTitreDeProduit.setBounds(170,40,345, 40);
 
-        JTextField tPrixDuProduit = new JTextField();
-        pDetails_produit.add(tPrixDuProduit);
-        tPrixDuProduit.setBounds(170,210,345,40);
+
 
         JTextField tDescription = new JTextField();
         pDetails_produit.add(tDescription);
@@ -144,81 +157,73 @@ public class InterfaceAnnonceur {
         f.add(table);
 
 
-        JbSoumetttre.addActionListener(new ActionListener()
-             {
-                  public void actionPerformed(ActionEvent e)
-                  {
-                       JOptionPane jop = new JOptionPane();
-                       String entree_estimation = jop.showInputDialog(null, "Entrer estimation", "Expert", JOptionPane.QUESTION_MESSAGE);
+        JbSoumetttre.addActionListener(e -> {
+             JOptionPane jop = new JOptionPane();
+             String entree_estimation = jop.showInputDialog(null, "Entrer estimation",
+                     "Expert", JOptionPane.QUESTION_MESSAGE);
 
-                  }
+        });
 
-             }
+
+        // voir toutes les offres qui ont ete faite aux produit de l'annonceur
+        JbVoirOffre.addActionListener(e -> {
+            JFrame f1 = new JFrame();
+            f1.setTitle("mes offres recues");
+            //etablire une connexion a la base de donnee
+            Connection c = ConnectionBD.connectTobd();
+            String sql = "select * from utilisateur where email = ? and nip = ? ";
+            //PreparedStatement ps = c.prepareStatement(sql);
+
+
+            String Data[] [] = {
+            {"Kathy1", "Kathy2","Kathy3", "Kathy4", "Kathy5", "Kathy6"},
+            {"John1", "John2","John3", "John4", "John5","John6"},
+            {"Sue", "Black","Knitting", "Sue", "Sue","Sue6"},
+            {"Jane", "White","Speed reading", "Sue","Sue","Jane"},
+            {"Joe", "Brown","Pool", "Sue", "Sue","Joe"}};
+
+            String colonne1[] = {"Titre","nom acheteur", "region acheteur", "Date de l'offre", "prix de l'offre"};
+
+            JTable jt = new  JTable (Data, colonne1);
+            jt.setBounds ( 600, 700, 800 , 700 );
+            JScrollPane sp1 = new  JScrollPane (jt);
+            f1.add (sp1);
+            f1.setSize (800,300);
+            f1.setLocationRelativeTo(null);
+            f1.setVisible ( true );
+                                  }
         );
 
-        JbVoirOffre.addActionListener(new ActionListener()
-             {
-                public void actionPerformed(ActionEvent e)
-                {
-                    JFrame f1 = new JFrame();
-                    f1.setTitle("");
+        historiqueVente.addActionListener(new ActionListener()
+            {
+                 public void actionPerformed(ActionEvent e)
+                 {
+                      JFrame f2 = new JFrame();
+                      f2.setTitle("");
 
-                    String Data[] [] = {
-                    {"Kathy1", "Kathy2","Kathy3", "Kathy4", "Kathy5", "Kathy6"},
-                    {"John1", "John2","John3", "John4", "John5","John6"},
-                    {"Sue", "Black","Knitting", "Sue", "Sue","Sue6"},
-                    {"Jane", "White","Speed reading", "Sue","Sue","Jane"},
-                    {"Joe", "Brown","Pool", "Sue", "Sue","Joe"}
-                  };
+                      String Data[] [] = {
+                      {"Kathy1", "Kathy2","Kathy3", "Kathy4"},
+                      {"John1", "John2","John3", "John4"},
+                      {"Sue", "Black","Knitting", "Sue"},
+                      {"Jane", "White","Speed reading", "Sue",},
+                      {"Joe", "Brown","Pool", "Sue"}
+                 };
 
-                                              String  colonne[] = {"Titre",
-                                                      "Description",
-                                                      "Catégorie",
-                                                      "Région",
-                                                      "Date",
-                                                      "Statut"};
-                                              JTable jt = new  JTable (Data, colonne);
-                                              jt.setBounds ( 600, 700, 800 , 700 );
-                                              JScrollPane sp = new  JScrollPane (jt);
-                                              f1.add (sp);
-                                              f1.setSize (800,300);
-                                              f1.setLocationRelativeTo(null);
-                                              f1.setVisible ( true );
-                                          }
+                 String  colonne[] = {"Titre",
+                 "Date",
+                 "Nom acheteur",
+                 "Prix"};
+                 JTable jt = new  JTable (Data, colonne);
+                 jt.setBounds ( 600, 700, 800 , 700 );
+                 JScrollPane sp = new  JScrollPane (jt);
+                 f2.add (sp);
+                 f2.setSize (800,300);
+                 f2.setLocationRelativeTo(null);
+                 f2.setVisible ( true );
+            }
 
-                                      }
-        );
-
-        JbHistoriqueVente.addActionListener(new ActionListener()
-                                            {
-                                                public void actionPerformed(ActionEvent e)
-                                                {
-                                                    JFrame f2 = new JFrame();
-                                                    f2.setTitle("");
-
-                                                    String Data[] [] = {
-                                                            {"Kathy1", "Kathy2","Kathy3", "Kathy4"},
-                                                            {"John1", "John2","John3", "John4"},
-                                                            {"Sue", "Black","Knitting", "Sue"},
-                                                            {"Jane", "White","Speed reading", "Sue",},
-                                                            {"Joe", "Brown","Pool", "Sue"}
-                                                    };
-
-                                                    String  colonne[] = {"Titre",
-                                                            "Date",
-                                                            "Nom acheteur",
-                                                            "Prix"};
-                                                    JTable jt = new  JTable (Data, colonne);
-                                                    jt.setBounds ( 600, 700, 800 , 700 );
-                                                    JScrollPane sp = new  JScrollPane (jt);
-                                                    f2.add (sp);
-                                                    f2.setSize (800,300);
-                                                    f2.setLocationRelativeTo(null);
-                                                    f2.setVisible ( true );
-                                                }
-
-                                            }
-        );
+        }
+    );
     }
 
 }

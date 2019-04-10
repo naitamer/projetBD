@@ -10,19 +10,23 @@ import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 
 
-public class InterfaceAcheteur {
+public class Acheteur {
     private int id_utilisateur;
+    // type = 0 si annonceur et =1 si acheteur.
 
-    InterfaceAcheteur(int id) {
+    Acheteur(int id) {
 
 //	     private final List<String> arrayCategorie=new ArrayList<String>();
         //  private final List<String> arrayRegion=new ArrayList<String>();
+        //recuperer les valeurs transmises lors de la connexion.
         this.id_utilisateur=id;
+
+
         final DefaultListModel modelCategorie = new DefaultListModel();
         final DefaultListModel modelRegion = new DefaultListModel();
         JFrame f = new JFrame("Acheteur");//Créer un objet graphique.
         f.setTitle("Achèteur");
-        f.setSize(900, 1000);          //Définir la taille de l'objet graphique.
+        f.setSize(900, 1000);    //Définir la taille de l'objet graphique.
         f.setLayout(null);
         f.setLocationRelativeTo(null);
         f.setResizable(false);

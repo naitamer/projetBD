@@ -81,61 +81,61 @@ public class ChoisirUtilisateur {
 
         JOptionPane jop = new JOptionPane();
 
-        connecter.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // si acheteur
-                String email = tAdresseCourriel.getText();
-                String password = tModDePasse.getText();
+        connecter.addActionListener(e -> {
+            // si acheteur
+            String email = tAdresseCourriel.getText();
+            String password = tModDePasse.getText();
 
-                if(email.equals(""))
-                {
-                    jop.showMessageDialog(null, "veuiller saisir une adresse courriel valide");
-                    tAdresseCourriel.grabFocus();
-                }
-                else if(password.equals("")){
-                    jop.showMessageDialog(null, "veuiller saisir une un mot de passe");
-                    tModDePasse.grabFocus();
-                }
-                else
-                {
-                    try {
-                        Connection c = ConnexionBD.connectTobd();
-                        String sql = "select * from utilisateur where email = ? and nip = ? ";
-                        PreparedStatement ps = c.prepareStatement(sql);
-                        ps.setString(1,email);
-                        ps.setString(2,password);
-                        ResultSet rs = ps.executeQuery();
-                        if(rs.next()){
-                            int id = rs.getInt("id_utilisateur");
-                            if(optionAcheteur.isSelected()){
-                                final InterfaceAcheteur UI3 = new InterfaceAcheteur(id);
-                                f.dispose();
-                            }
-                            //si annonceur
-                            else if(optionAnnonceur.isSelected()){
-                                final InterfaceAnnonceur UI2 = new InterfaceAnnonceur(id);
-                                f.dispose();
-                            }
-                            else {
-                                jop.showMessageDialog(null, "veuiller saisir une un mot de passe");
-                            }
-
+            if(email.equals(""))
+            {
+                jop.showMessageDialog(null, "veuiller saisir une adresse courriel valide");
+                tAdresseCourriel.grabFocus();
+            }
+            else if(password.equals("")){
+                jop.showMessageDialog(null, "veuiller saisir une un mot de passe");
+                tModDePasse.grabFocus();
+            }
+            else
+            {
+                try {
+                    Connection c = ConnectionBD.connectTobd();
+                    String sql = "select * from utilisateur where email = ? and nip = ? ";
+                    PreparedStatement ps = c.prepareStatement(sql);
+                    ps.setString(1,email);
+                    ps.setString(2,password);
+                    ResultSet rs = ps.executeQuery();
+                    if(rs.next()){
+                        int id = rs.getInt("id_utilisateur");
+                        int type;
+                        if(optionAcheteur.isSelected()){
+                            type = 1;
+                            final Acheteur UI3 = new Acheteur(id);
+                            f.dispose();
                         }
-                        else{
-                            JOptionPane jop = new JOptionPane();
-                            jop.showMessageDialog(null, "adresse courriel ou mot de passe incorrect");
-
-
+                        //si annonceur
+                        else if(optionAnnonceur.isSelected()){
+                            type = 0;
+                            final Annonceur UI2 = new Annonceur(id);
+                            f.dispose();
+                        }
+                        else {
+                            jop.showMessageDialog(null, "veuiller saisir une un mot de passe");
                         }
 
-                    } catch (SQLException e1) {
-                        e1.printStackTrace();
+                    }
+                    else{
+                        JOptionPane jop1 = new JOptionPane();
+                        jop1.showMessageDialog(null, "adresse courriel ou mot de passe incorrect");
+
+
                     }
 
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
                 }
 
             }
+
         });
 
 
