@@ -1,22 +1,23 @@
 
--- INSERT INTO category VALUES (1, 'table');
--- INSERT INTO category VALUES (2, 'jeux');
-INSERT INTO category (id_categorie, nom_categorie) VALUES
-(1, 'maison'),
-(2, 'vetement'),
-(3, 'bebe'),
-(4, 'location'),
-(5, 'loisir'),
-(6, 'meuble'),
-(7, 'autre');
---ALTER SEQUENCE categorie_id_categorie_seq RESTART WITH 2;
+--ici j'ai rajoute un attribut group qui me permetera de faire des categorie et
+--des sous gategorie lors de la recherche d'un produit par un acheteur
+INSERT INTO category (id_categorie, groupe, nom_categorie) VALUES
+(1,'auto', 'pneu'),
+(2, 'auto',''),
+(3, 'bebe', 'vetement'),
+(4, 'bebe', 'jouet'),
+(5, 'vetement', 'jupe'),
+(6, 'vetement', 'pantalon'),
+(7, 'autre','autre');
 
-INSERT INTO region VALUES(1, 'CAD' , 'Montreal');
-INSERT INTO region VALUES(2, 'CAD', 'Edmonton');
-INSERT INTO region VALUES(3, 'CAD' , 'Toronto');
-INSERT INTO region VALUES(4, 'CAD' , 'Vancouver');
-INSERT INTO region VALUES(5, 'CAD' , 'Calgary');
-INSERT INTO region VALUES(6, 'CAD', 'Quebec');
+
+INSERT INTO region VALUES
+(1, 'CAD' , 'Montreal');
+(2, 'CAD', 'Edmonton');
+(3, 'CAD' , 'Toronto');
+(4, 'CAD' , 'Vancouver');
+(5, 'CAD' , 'Calgary');
+(6, 'CAD', 'Quebec');
 
 INSERT INTO region VALUES(7, 'USD', 'Boston');
 INSERT INTO region VALUES(8, 'USD', 'New York');
@@ -43,10 +44,12 @@ INSERT INTO region VALUES(24, 'AUD', 'Sydney');
 INSERT INTO region VALUES(25, 'AUD', 'Melbourne');
 ALTER SEQUENCE region_id_region_seq RESTART WITH 3;
 
+--ici il faut juste mettre le nom et prenom comme un seul attribut
+-- comme pour les 3 premier inserts
 INSERT INTO utilisateur VALUES
-(1, 'Nait', 'Ounissa', 'ounissa.nait@gmail.com', 'ounissa123', 1),
-(2, 'Hanoun', 'Meshleen', 'meshleen@gmail.com', 'meshleen123', 2),
-(3, 'Smith', 'Jacob', 'jacob.smith@gmail.com', 'jacob123', 3),
+(1, 'Nait Ounissa', 'ounissa.nait@gmail.com', 'ounissa123', 1),
+(2, 'Hanoun Meshleen', 'meshleen@gmail.com', 'meshleen123', 2),
+(3, 'Smith Jacob', 'jacob.smith@gmail.com', 'jacob123', 3),
 (4, 'Johnson', 'Michael', 'michael.johnson@hotmail.com', 'michael123', 4),
 (5, 'Williams', 'Joshua', 'joshua.williams@hotmail.com', 'joshua123', 5),
 (6, 'Jones', 'Matthew', 'matthew.jones@sympatico.ca', 'matthew123', 6),
@@ -122,8 +125,9 @@ INSERT INTO utilisateur VALUES
 (76, 'Kelly', 'Anna', 'anna.kelly@sympatico.ca', 'anna123', 5); 
 
 
-INSERT INTO produit (id_produit, titre, description, prix_annonceur, statut, id_annonceur, num_categorie) VALUES
-(1, 'table antique', 'très peu utilisée, état comme neuf', 50.00, 'waiting', 1, 1),
+--attention ici j'ai ajouter une date juste apres le statut,
+INSERT INTO annonce (id_annonce, titre, description, prix_annonceur, statut,date_annonce, id_annonceur, num_categorie) VALUES
+(1, 'table antique', 'très peu utilisée, état comme neuf', 50.00, 'waiting', '2019-03-11', 1, 1),
 (2, 'chandail', 'chandail marque cos', 20.00, 'validated', 1, 2),
 (3, 'chemise', 'neuf', 30.00, 'estimated', 2, 2),
 (4, 'robe', NULL, 78.00, 'validated', 3, 2),
@@ -175,14 +179,15 @@ INSERT INTO produit (id_produit, titre, description, prix_annonceur, statut, id_
 (50, 'armoire', 'wardrobe cabinet', 79.00, 'validated', 6, 6),
 (51, 'divan', 'très peu utilise, état comme neuf', 50.00, 'validated', 75, 6);
 
-ALTER SEQUENCE produit_num_produit_seq RESTART WITH 1;
 
-INSERT INTO estimation (id_estimation, prix_estimation, date_estimation, id_expert, num_produit) VALUES
-(1, 18.00, '2019-03-11 23:03:03', 76, 2),
-(2, 25.00, '2019-03-13 23:03:03', 76, 3),
-(3, 39.00, '2019-03-15 23:03:03', 76, 4),
-(4, 30.00, '2019-03-17 23:03:03', 76, 5),
-(5, 100.00, '2019-03-22 23:03:03', 76, 7),
+--ici aussi la date au lieu de timestemp, et attention, la cle etrangere pour produit a ete changer pour annonce
+--une nouvelle talble qui a fait son apparition
+INSERT INTO estimation (id_estimation, prix_estimation, date_estimation, id_expert, num_annonce) VALUES
+(1, 18.00, '2019-03-11', 76, 2),
+(2, 25.00, '2019-03-13', 76, 3),
+(3, 39.00, '2019-03-15', 76, 4),
+(4, 30.00, '2019-03-17', 76, 5),
+(5, 100.00, '2019-03-22', 76, 7),
 (6, 99.00, '2019-03-25 23:03:03', 76, 9),
 (7, 950.00, '2019-03-27 23:03:03', 76, 11),
 (8, 14.00, '2019-03-28 23:03:03', 76, 12),
@@ -219,11 +224,13 @@ INSERT INTO estimation (id_estimation, prix_estimation, date_estimation, id_expe
 (39, 45.00, '2019-03-20 15:03:03', 76, 51);
 
 
+--ici jai modifier le timestemp en date 
+--je cest que cest chainat desolee :(
 INSERT INTO offre VALUES
-(1, 19.83, "2019-03-18 08:08:02", 28, 40),
-(2, 110.39, "2019-04-10 18:17:33", 29, 68),
-(3, 31.71, "2019-02-28 07:46:15", 31, 75),
-(4, 110.83, "2019-03-18 21:44:18", 17, 54),
+(1, 19.83, "2019-03-18", 28, 40),
+(2, 110.39, "2019-04-10", 29, 68),
+(3, 31.71, "2019-02-28", 31, 75),
+(4, 110.83, "2019-03-18", 17, 54),
 (5, 26.18, "2019-03-25 00:07:09", 31, 31),
 (6, 78.29, "2019-03-27 20:36:40", 50, 44),
 (7, 27.26, "2019-03-12 19:52:05", 33, 54),
@@ -270,3 +277,9 @@ INSERT INTO offre VALUES
 (48, 76.83, "2019-02-17 06:08:19", 34, 53),
 (49, 547.80, "2019-02-16 05:27:13", 46, 16),
 (50, 70.02, "2019-03-03 00:19:14", 50, 2);
+
+-- pour la table vente il va falloir ajouter id_acheteur
+
+
+
+--ajouter des entree pour la table produits

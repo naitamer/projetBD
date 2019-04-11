@@ -14,6 +14,7 @@ CREATE TYPE type_monnaie AS ENUM
 CREATE TABLE categorie
 (
     id_categorie serial PRIMARY KEY,
+    groupe character varying(50) NOT NULL,
     nom_categorie character varying(50) NOT NULL
 );
 
@@ -42,13 +43,14 @@ CREATE TABLE utilisateur
 
 
 
-CREATE TABLE produit
+CREATE TABLE annonce
 (
-    id_produit serial PRIMARY KEY,
+    id_annonce serial PRIMARY KEY,
     titre character varying(50),
     description character varying(600),
     prix_annonceur numeric(8,2) NOT NULL,
     statut statut_produit NOT NULL,
+    date_annonce date NOT NULL,
     id_annonceur integer NOT NULL,
     num_categorie integer NOT NULL,
     CONSTRAINT prix_positif CHECK (prix_annonceur >= 0::numeric) NOT VALID,
@@ -57,17 +59,23 @@ CREATE TABLE produit
 );
 
 
+CREATE TABLE produit
+(
+    id_produit serial PRIMARY KEY,
+    titre character varying(50) NOT NULL
+);
+
 
 
 CREATE TABLE estimation 
 (
     id_estimation serial PRIMARY KEY,
     prix_estimation numeric(8,2) NOT NULL,
-    date_estimation timestamp NOT NULL,
+    date_estimation date NOT NULL,
     id_expert integer NOT NULL,
-    num_produit integer NOT NULL,
+    num_annonce integer NOT NULL,
     CONSTRAINT expert_fkey FOREIGN KEY (id_expert) references utilisateur (id_utilisateur),
-    CONSTRAINT produit_fkey FOREIGN KEY (num_produit) references produit (id_produit),
+    CONSTRAINT annonce_fkey FOREIGN KEY (num_annonce) references annonce (id_annonce),
     CONSTRAINT prix_positif CHECK (prix_estimation >= 0::numeric) NOT VALID
 );
 
@@ -78,7 +86,7 @@ CREATE TABLE offre
 (
     id_offre serial PRIMARY KEY,
     prix_offre numeric(8,2) NOT NULL,
-    date_offre timestamp NOT NULL,
+    date_offre date NOT NULL,
     num_produit integer NOT NULL,
     id_acheteur integer NOT NULL,
     CONSTRAINT id_produit_fkey FOREIGN KEY (num_produit) references produit (id_produit),
@@ -95,6 +103,7 @@ CREATE TABLE vente
     date_vente timestamp NOT NULL,
     prix_vente numeric(8,2) NOT NULL,
     num_produit integer NOT NULL,
+    num_acht integer NOT NULL,
     CONSTRAINT id_prod_fkey FOREIGN KEY (num_produit) references produit (id_produit),
     CONSTRAINT id_acht_fkey FOREIGN KEY (num_acheteur) references utilisateur (id_utilisateur),
     CONSTRAINT prix_positif CHECK (prix_vente >= 0::numeric) NOT VALID

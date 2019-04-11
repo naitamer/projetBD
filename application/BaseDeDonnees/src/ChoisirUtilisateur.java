@@ -106,15 +106,12 @@ public class ChoisirUtilisateur {
                     ResultSet rs = ps.executeQuery();
                     if(rs.next()){
                         int id = rs.getInt("id_utilisateur");
-                        int type;
                         if(optionAcheteur.isSelected()){
-                            type = 1;
                             final Acheteur UI3 = new Acheteur(id);
                             f.dispose();
                         }
                         //si annonceur
                         else if(optionAnnonceur.isSelected()){
-                            type = 0;
                             final Annonceur UI2 = new Annonceur(id);
                             f.dispose();
                         }

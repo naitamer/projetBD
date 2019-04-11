@@ -39,6 +39,11 @@ public class Annonceur {
         f.setVisible(true);            //Afficher l'objet graphique.
 
 
+
+
+
+
+
         // panel pour mettre les detail du produit a ajouter
         JPanel pDetails_produit = new JPanel ();
         String title = "Details de produit";
@@ -46,7 +51,7 @@ public class Annonceur {
         ((TitledBorder) border).setTitleFont(new Font("Serif",Font.BOLD, 25));
         pDetails_produit.setBorder(border);
         pDetails_produit.setLocation (15, 15 ) ;
-        pDetails_produit.setSize (530, 440) ;
+        pDetails_produit.setSize (530, 380) ;
         pDetails_produit.setLayout(null);
         f.add(pDetails_produit);
 
@@ -58,7 +63,7 @@ public class Annonceur {
         ((TitledBorder) borderMes_Annonce).setTitleFont(new Font("Serif",Font.BOLD, 25));
         pMes_Annonce.setBorder(borderMes_Annonce);
         pMes_Annonce.setLocation (545, 15 ) ;
-        pMes_Annonce.setSize (340, 440) ;
+        pMes_Annonce.setSize (340, 380) ;
         pMes_Annonce.setLayout(null);
         f.add(pMes_Annonce);
 
@@ -75,7 +80,7 @@ public class Annonceur {
         f.add(pTable);*/
 
         JButton JbSoumetttre =new JButton("Soumettre");      //Créer un bouton.
-        JbSoumetttre.setBounds(170, 460, 200, 50);                   //Définir la taille du bouton.
+        JbSoumetttre.setBounds(350, 400, 200, 50);                   //Définir la taille du bouton.
         JbSoumetttre.setFont(new Font("Serif", Font.BOLD, 20));    //Définir le font.
         f.add(JbSoumetttre);
 
@@ -89,7 +94,6 @@ public class Annonceur {
         historiqueVente.setBounds(80, 200, 200, 50);                   //Définir la taille du bouton.
         historiqueVente.setFont(new Font("Serif", Font.BOLD, 20));    //Définir le font.
         pMes_Annonce.add(historiqueVente);
-
 
         JLabel labelTitreDeProduit=new JLabel("Titre du produit : ");       //créer les Labels.
         labelTitreDeProduit.setBounds(15,30, 200, 50);
@@ -107,31 +111,29 @@ public class Annonceur {
         labelPrixDuProduit.setFont(new Font("Serif", Font.BOLD, 20));     //Définir le Font des labels.
         pDetails_produit.add(labelPrixDuProduit);
 
-        JTextField tPrixDuProduit = new JTextField();
-        pDetails_produit.add(tPrixDuProduit);
-        tPrixDuProduit.setBounds(170,85,345,40);
-
 
         JLabel labelDescription=new JLabel("Description : ");       //créer les Labels.
-        labelDescription.setBounds(15,175, 250, 170);
+        labelDescription.setBounds(15,150, 250, 170);
         labelDescription.setFont(new Font("Serif", Font.BOLD, 20));     //Définir le Font des labels.
         pDetails_produit.add(labelDescription);
-
 
         JTextField tTitreDeProduit = new JTextField();
         pDetails_produit.add(tTitreDeProduit);
         tTitreDeProduit.setBounds(170,40,345, 40);
 
+        JTextField tPrixDuProduit = new JTextField();
+        pDetails_produit.add(tPrixDuProduit);
+        tPrixDuProduit.setBounds(170,160,345,40);
 
 
         JTextField tDescription = new JTextField();
         pDetails_produit.add(tDescription);
-        tDescription.setBounds(15,280,500 ,150);
+        tDescription.setBounds(15,260,500 ,100);
 
         JList listCategorie = new JList(modelCategorie);         //Créer les Jlist.
         listCategorie.setFont(new Font("SansSerif", Font.PLAIN, 20));//Définir le Font des Ã©lÃ©ments dans liste.
         f.add(listCategorie);                             //Ajouter les listes au JFram
-        listCategorie.setBounds(150, 125, 380, 80);       //Définir les tailles et les places des listes.
+        listCategorie.setBounds(150, 110, 380, 40);       //Définir les tailles et les places des listes.
         listCategorie.setSelectionMode (ListSelectionModel.SINGLE_SELECTION);     //Définir le mode de sÃ©lection (la maniÃ¨re dont les Ã©lÃ©ments peuvent Ãªtre sÃ©lectionnÃ©s).
 
         //Définir un table

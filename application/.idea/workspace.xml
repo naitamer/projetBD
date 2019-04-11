@@ -31,31 +31,19 @@
       <file leaf-file-name="Annonceur.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BaseDeDonnees/src/Annonceur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1598">
-              <caret line="105" column="42" lean-forward="true" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
+            <state relative-caret-position="250">
+              <caret line="117" column="47" lean-forward="true" selection-start-line="117" selection-start-column="47" selection-end-line="117" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConnectionBD.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ConnectionBD.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BaseDeDonnees/src/ConnectionBD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+            <state relative-caret-position="306">
+              <caret line="26" column="44" lean-forward="true" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChoisirUtilisateur.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/BaseDeDonnees/src/ChoisirUtilisateur.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-213">
-              <caret line="98" column="13" lean-forward="true" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -68,6 +56,18 @@
               <folding>
                 <element signature="e#812#813#0" expanded="true" />
                 <element signature="e#841#842#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChoisirUtilisateur.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BaseDeDonnees/src/ChoisirUtilisateur.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="114" column="68" lean-forward="true" selection-start-line="114" selection-start-column="28" selection-end-line="114" selection-end-column="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,9 +88,9 @@
       <find>Jbutton</find>
       <find>categorie</find>
       <find>type</find>
-      <find>connexion</find>
       <find>mes</find>
       <find>historique</find>
+      <find>connexion</find>
       <find>Jtext</find>
     </findStrings>
   </component>
@@ -108,9 +108,10 @@
         <option value="$PROJECT_DIR$/BaseDeDonnees/src/InterfaceAcheteur.java" />
         <option value="$PROJECT_DIR$/BaseDeDonnees/src/InterfaceAnnonceur.java" />
         <option value="$PROJECT_DIR$/BaseDeDonnees/src/ConnexionBD.java" />
-        <option value="$PROJECT_DIR$/BaseDeDonnees/src/ChoisirUtilisateur.java" />
         <option value="$PROJECT_DIR$/BaseDeDonnees/src/Acheteur.java" />
+        <option value="$PROJECT_DIR$/BaseDeDonnees/src/ChoisirUtilisateur.java" />
         <option value="$PROJECT_DIR$/BaseDeDonnees/src/Annonceur.java" />
+        <option value="$PROJECT_DIR$/BaseDeDonnees/src/ConnectionBD.java" />
       </list>
     </option>
   </component>
@@ -721,29 +722,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BaseDeDonnees/src/ConnectionBD.java">
+    <entry file="file://$PROJECT_DIR$/BaseDeDonnees/src/ChoisirUtilisateur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-          <folding />
+        <state relative-caret-position="318">
+          <caret line="114" column="68" lean-forward="true" selection-start-line="114" selection-start-column="28" selection-end-line="114" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BaseDeDonnees/src/Annonceur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="105" column="42" lean-forward="true" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
+        <state relative-caret-position="250">
+          <caret line="117" column="47" lean-forward="true" selection-start-line="117" selection-start-column="47" selection-end-line="117" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BaseDeDonnees/src/ChoisirUtilisateur.java">
+    <entry file="file://$PROJECT_DIR$/BaseDeDonnees/src/ConnectionBD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-213">
-          <caret line="98" column="13" lean-forward="true" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="306">
+          <caret line="26" column="44" lean-forward="true" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
