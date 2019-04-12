@@ -143,7 +143,7 @@ INSERT INTO annonce (id_annonce, titre, description, prix_annonceur, statut, dat
 (18, 'table', 'table en bois', 95.00, 'validated', '2019-02-22', 66, 2),
 (19, 'jeux video', 'supermario classique', 20.00, 'waiting', '2019-03-05', 8, 7),
 (20, 'jeux video', 'supermario 3D', 30.00, 'waiting', '2019-04-04', 8, 7),
-(21, 'jeux video', 'cart mario', 10.00, 'validated', '2019-04-05', 33, 7)
+(21, 'jeux video', 'cart mario', 10.00, 'validated', '2019-04-05', 33, 7),
 (22, 'pantalon', 'levis jean', 56.00, 'validated', '2019-03-12', 56, 5),
 (23, 'pantalon', 'jean noir', 34.00, 'validated', '2019-02-01', 55, 5),
 (24, 'auto', 'près de vieux montreal, 3 portes', 1500.00, 'waiting', '2019-01-17', 62, 1),
@@ -163,7 +163,7 @@ INSERT INTO annonce (id_annonce, titre, description, prix_annonceur, statut, dat
 (38, 'jeu de societe', 'blocus game', 10.00, 'estimated', '2019-03-25', 66, 7),
 (39, 'jeu de societe', 'opération game', 10.00, 'waiting', '2019-02-27', 65, 7),
 (40, 'jeu de societe', 'connect 4 game', 15.00, 'waiting', '2019-04-28', 71, 7),
-(41, 'jeu de carte', 'uno card game', 4.00, 'validated', '2019-01-27', 73, 7)
+(41, 'jeu de carte', 'uno card game', 4.00, 'validated', '2019-01-27', 73, 7),
 (42, 'jeu de carte', 'melissa et doug', 20.00, 'validated', '2019-01-09', 72, 7),
 (43, 'maillot de bain', 'neuf', 30.00, 'validated', '2019-01-12', 6, 6),
 (44, 'base guitar', 'electric bass guitar', 70.00, 'validated', '2019-03-06', 43, 7),
@@ -193,7 +193,27 @@ INSERT INTO annonce (id_annonce, titre, description, prix_annonceur, statut, dat
 (68, 'gomme a effacer', 'ayant apartenu a une celebrite', 333.07, 'validated', '2019-04-11', 53, 7),
 (69, 'gomme a effacer', 'a super bon prix', 460.96, 'validated', '2019-03-09', 56, 7),
 (70, 'surligneur', 'comme neuf', 156.90, 'validated', '2019-04-23', 10, 7),
-(71, 'porte-cles', 'doit etre vendu', 133.03, 'validated', '2019-02-25', 6, 7);
+(71, 'porte-cles', 'doit etre vendu', 133.03, 'validated', '2019-02-25', 6, 7),
+(72, 'serviette', 'ayant apartenu a une celebrite', 342.19, 'validated', '2019-04-20', 26, 7),
+(73, 'paire de ciseaux', 'legerement utilise', 158.00, 'validated', '2019-02-03', 62, 7),
+(74, 'porte-cles', 'ayant apartenu a une celebrite', 22.56, 'validated', '2019-03-01', 53, 7),
+(75, 'surligneur', 'details sur demande', 452.48, 'validated', '2019-02-17', 2, 7),
+(76, 'montre', 'ayant apartenu a une celebrite', 95.16, 'validated', '2019-03-25', 50, 7),
+(77, 'surligneur', 'comme neuf', 495.90, 'validated', '2019-02-14', 74, 7),
+(78, 'surligneur', 'ayant apartenu a une celebrite', 120.21, 'validated', '2019-03-26', 32, 7),
+(79, 'etui a crayons', 'a super bon prix', 468.13, 'validated', '2019-04-07', 13, 7),
+(80, 'serviette', 'ayant apartenu a une celebrite', 310.02, 'validated', '2019-03-14', 24, 7),
+(81, 'gomme a effacer', 'doit etre vendu', 379.39, 'validated', '2019-02-16', 48, 7),
+(82, 'paire de ciseaux', 'dans son emballage original', 326.68, 'validated', '2019-03-05', 4, 7),
+(83, 'serviette', 'doit etre vendu', 167.42, 'validated', '2019-02-10', 46, 7),
+(84, 'gomme a effacer', 'comme neuf', 492.80, 'validated', '2019-02-7', 23, 7),
+(85, 'etui a crayons', 'comme neuf', 439.62, 'validated', '2019-03-20', 53, 7),
+(86, 'surligneur', 'comme neuf', 79.26, 'validated', '2019-01-01', 37, 7),
+(87, 'montre', 'comme neuf', 346.87, 'validated', '2019-01-24', 70, 7),
+(88, 'porte-cles', 'details sur demande', 183.57, 'validated', '2019-03-05', 64, 7),
+(89, 'montre', 'dans son emballage original', 333.26, 'validated', '2019-02-16', 60, 7),
+(90, 'surligneur', 'comme neuf', 187.63, 'validated', '2019-04-08', 28, 7),
+(91, 'gomme a effacer', 'ayant apartenu a une celebrite', 263.43, 'validated', '2019-01-04', 63, 7);
 
 
 --ici aussi la date au lieu de timestemp, et attention, la cle etrangere pour produit a ete changer pour annonce
