@@ -142,7 +142,7 @@ INSERT INTO annonce (id_annonce, titre, description, prix_annonceur, statut, dat
 (17, 'table', 'table pour outdoor', 120.00, 'validated', '2019-02-11', 54, 2),
 (18, 'table', 'table en bois', 95.00, 'validated', '2019-02-22', 66, 2),
 (19, 'jeux video', 'supermario classique', 20.00, 'waiting', '2019-03-05', 8, 7),
-(20, 'jeux video', 'supermario 3D', 30.00, 'waiting' '2019-04-04', 8, 7),
+(20, 'jeux video', 'supermario 3D', 30.00, 'waiting', '2019-04-04', 8, 7),
 (21, 'jeux video', 'cart mario', 10.00, 'validated', '2019-04-05', 33, 7)
 (22, 'pantalon', 'levis jean', 56.00, 'validated', '2019-03-12', 56, 5),
 (23, 'pantalon', 'jean noir', 34.00, 'validated', '2019-02-01', 55, 5),
