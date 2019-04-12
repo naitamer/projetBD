@@ -2,14 +2,13 @@
 --ici j'ai rajoute un attribut group qui me permetera de faire des categorie et
 --des sous gategorie lors de la recherche d'un produit par un acheteur
 INSERT INTO category (id_categorie, groupe, nom_categorie) VALUES
-(1,'auto', 'pneu'),
-(2, 'auto',''),
+(1, 'maison', 'auto'),
+(2, 'maison','meuble'),
 (3, 'bebe', 'vetement'),
 (4, 'bebe', 'jouet'),
-(5, 'vetement', 'jupe'),
-(6, 'vetement', 'pantalon'),
+(5, 'vetement', 'bas'),
+(6, 'vetement', 'haut'),
 (7, 'autre','autre');
-
 
 INSERT INTO region VALUES
 (1, 'CAD' , 'Montreal');
@@ -19,29 +18,26 @@ INSERT INTO region VALUES
 (5, 'CAD' , 'Calgary');
 (6, 'CAD', 'Quebec');
 
-INSERT INTO region VALUES(7, 'USD', 'Boston');
-INSERT INTO region VALUES(8, 'USD', 'New York');
-INSERT INTO region VALUES(9, 'USD', 'Chicago');
-INSERT INTO region VALUES(10, 'USD', 'Vermont');
-INSERT INTO region VALUES(11, 'USD', 'Seatle');
-INSERT INTO region VALUES(12, 'USD', 'Cleveland');
-
-
-INSERT INTO region VALUES(13, 'EUR' , 'Rome');
-INSERT INTO region VALUES(14, 'EUR', 'Paris');
-INSERT INTO region VALUES(15, 'EUR', 'Lyon');
-INSERT INTO region VALUES(16, 'EUR' , 'Nice');
-INSERT INTO region VALUES(17, 'EUR', 'Naples');
-INSERT INTO region VALUES(18, 'EUR', 'Milano');
-
-INSERT INTO region VALUES(19, 'JYP', 'Tokyo');
-INSERT INTO region VALUES(20, 'JYP', 'Kyoto');
-INSERT INTO region VALUES(21, 'JYP', 'Osaka');
-
-INSERT INTO region VALUES(22, 'AUD', 'Perth');
-INSERT INTO region VALUES(23, 'AUD' , 'Brisbane');
-INSERT INTO region VALUES(24, 'AUD', 'Sydney');
-INSERT INTO region VALUES(25, 'AUD', 'Melbourne');
+INSERT INTO region VALUES
+(7, 'USD', 'Boston'),
+(8, 'USD', 'New York'),
+(9, 'USD', 'Chicago'),
+(10, 'USD', 'Vermont'),
+(11, 'USD', 'Seatle'),
+(12, 'USD', 'Cleveland'),
+(13, 'EUR' , 'Rome'),
+(14, 'EUR', 'Paris'),
+(15, 'EUR', 'Lyon'),
+(16, 'EUR' , 'Nice'),
+(17, 'EUR', 'Naples'),
+(18, 'EUR', 'Milano'),
+(19, 'JYP', 'Tokyo'),
+(20, 'JYP', 'Kyoto'),
+(21, 'JYP', 'Osaka'),
+(22, 'AUD', 'Perth'),
+(23, 'AUD' , 'Brisbane'),
+(24, 'AUD', 'Sydney'),
+(25, 'AUD', 'Melbourne');
 ALTER SEQUENCE region_id_region_seq RESTART WITH 3;
 
 --ici il faut juste mettre le nom et prenom comme un seul attribut
@@ -126,58 +122,78 @@ INSERT INTO utilisateur VALUES
 
 
 --attention ici j'ai ajouter une date juste apres le statut,
-INSERT INTO annonce (id_annonce, titre, description, prix_annonceur, statut,date_annonce, id_annonceur, num_categorie) VALUES
-(1, 'table antique', 'très peu utilisée, état comme neuf', 50.00, 'waiting', '2019-03-11', 1, 1),
-(2, 'chandail', 'chandail marque cos', 20.00, 'validated', 1, 2),
-(3, 'chemise', 'neuf', 30.00, 'estimated', 2, 2),
-(4, 'robe', NULL, 78.00, 'validated', 3, 2),
-(5, 'chaussure', 'tout a fait nouveau', 34.00, 'validated', 4, 2),
-(6, 'chaussure', 'limited edition', 33.00, 'waiting', 5, 2),
-(7, 'poussette', 'poussette blanche', 125.00, 'validated', 8, 3),
-(8, 'vase antique', 'vase antique rouge', 550.00, 'waiting', 1, 1),
-(9, 'humidifier', 'très peu utilisée', 100.00, 'validated', 9, 1),
-(10, 'aspirateur', 'aspirateur dyson', 200.00, 'waiting', 12, 1),
-(11, 'appartement', 'près de la station berri', 1000.00, 'validated', 15, 4),
-(12, 'chandail', 'chandail pour le bebe, 6 mois', 15.00, 'validated', 19, 3),
-(13, 'chapeau bleu', 'usagé, bleu, cute', 12.00, 'estimated', 38, 3),
-(14, 'chaise', 'chaise pour outdoor', 64.00, 'refused', 32, 6),
-(15, 'chaise', 'chaise pour le bureau', 1000.00, 'validated', 73, 6),
-(16, 'chaise', 'stool', 40.00, 'validated', 44, 6),
-(17, 'table', 'table pour outdoor', 120.00, 'validated', 54, 6),
-(18, 'table', 'table en bois', 95.00, 'validated', 66, 6),
-(19, 'jeux video', 'supermario classique', 20.00, 'waiting', 8, 5),
-(20, 'jeux video', 'supermario 3D', 30.00, 'waiting' 8, 5),
-(21, 'jeux video', 'cart mario', 10.00, 'validated', 33, 5)
-(22, 'pantalon', 'levis jean', 56.00, 'validated', 56, 2),
-(23, 'pantalon', 'jean noir', 34.00, 'validated', 55, 2),
-(24, 'appartement', 'près de vieux montreal, 3 et demie', 1500.00, 'waiting', 62, 4),
-(25, 'futon', 'couleur blanche', 30.00, 'waiting', 65, 6),
-(26, 'vaisselle', 'cuiller en argent', 70.00, 'waiting', 11, 1),
-(27, 'vaisselle', 'baguette en argent', 100.00, 'waiting', 12, 1),
-(28, 'literie', 'oreiller vert', 20.00, 'validated', 13, 1),
-(29, 'literie', 'couverture', 100.00, 'validated', 14, 1),
-(30, 'vaisselle', 'assiette à pain', 22.00, 'validated', 11, 1),
-(31, 'chaussure', 'bebe flip-flop', 30.00, 'validated', 51, 3),
-(32, 'table de bebe', 'table de bebe', 20.00, 'validated', 52, 3),
-(33, 'jouet', 'jouet interactif', 30.00, 'validated', 55, 3),
-(34, 'fauteuil', 'fauteuil de bebe', 70.00,'validated', 56, 3),
-(35, 'lit', 'lit de bebe', 100.00, 'estimated', 43, 3),
-(36, 'vetements', '2 pantalons et 2 chandails', 20.00, 'estimated', 33, 3),
-(37, 'vetements', '5 vetements', 20.00, 'estimated', 36, 3),
-(38, 'jeu de societe', 'blocus game', 10.00, 'estimated', 66, 5),
-(39, 'jeu de societe', 'opération game', 10.00, 'waiting', 65, 5),
-(40, 'jeu de societe', 'connect 4 game', 15.00, 'waiting', 71, 5),
-(41, 'jeu de carte', 'uno card game', 4.00, 'validated', 73, 5)
-(42, 'jeu de carte', 'melissa et doug', 20.00, 'validated', 72, 5),
-(43, 'maillot de bain', 'neuf', 30.00, 'validated', 6, 4),
-(44, 'base guitar', 'electric bass guitar', 70.00, 'validated', 43, 4),
-(45, 'speaker', 'vintage speaker', 150.00, 'estimated', 42, 4),
-(46, 'guitar', 'fendre elec-guitar', 600.00, 'validated', 33, 4),
-(47, 'voiture', 'hyundai elantra 50dollar par jour', 50.00, 'validated', 74, 4),
-(48, 'artwork', 'pop art framed ready to hang', 30.00, 'refused', 11, 1),
-(49, 'lampe', '30*20*40 lampe de lit', 30.00, 'refused', 6, 6),
-(50, 'armoire', 'wardrobe cabinet', 79.00, 'validated', 6, 6),
-(51, 'divan', 'très peu utilise, état comme neuf', 50.00, 'validated', 75, 6);
+INSERT INTO annonce (id_annonce, titre, description, prix_annonceur, statut, date_annonce, id_annonceur, num_categorie) VALUES
+(1, 'table antique', 'très peu utilisée, état comme neuf', 50.00, 'waiting', '2019-03-11', 1, 2),
+(2, 'chandail', 'chandail marque cos', 20.00, 'validated', '2019-02-14', 1, 6),
+(3, 'chemise', 'neuf', 30.00, 'estimated', '2019-01-19', 2, 6),
+(4, 'robe', '', 78.00, 'validated', '2019-02-27', 3, 6),
+(5, 'chaussure', 'tout a fait nouveau', 34.00, 'validated', '2019-03-02', 4, 5),
+(6, 'chaussure', 'limited edition', 33.00, 'waiting', '2019-01-06', 5, 5),
+(7, 'poussette', 'poussette blanche', 125.00, 'validated', '2019-01-09', 8, 4),
+(8, 'vase antique', 'vase antique rouge', 550.00, 'waiting', '2019-03-23', 1, 2),
+(9, 'humidifier', 'très peu utilisée', 100.00, 'validated', '2019-02-03', 9, 2),
+(10, 'aspirateur', 'aspirateur dyson', 200.00, 'waiting', '2019-03-16', 12, 2),
+(11, 'appartement', 'près de la station berri', 1000.00, 'validated', '2019-01-12', 15, 2),
+(12, 'chandail', 'chandail pour le bebe, 6 mois', 15.00, 'validated', '2019-04-03', 19, 6),
+(13, 'chapeau bleu', 'usagé, bleu, cute', 12.00, 'estimated', '2019-04-23', 38, 6),
+(14, 'chaise', 'chaise pour outdoor', 64.00, 'refused', '2019-04-25', 32, 2),
+(15, 'chaise', 'chaise pour le bureau', 1000.00, 'validated', '2019-03-13', 73, 2),
+(16, 'chaise', 'stool', 40.00, 'validated', '2019-04-27', 44, 2),
+(17, 'table', 'table pour outdoor', 120.00, 'validated', '2019-02-11', 54, 2),
+(18, 'table', 'table en bois', 95.00, 'validated', '2019-02-22', 66, 2),
+(19, 'jeux video', 'supermario classique', 20.00, 'waiting', '2019-03-05', 8, 7),
+(20, 'jeux video', 'supermario 3D', 30.00, 'waiting' '2019-04-04', 8, 7),
+(21, 'jeux video', 'cart mario', 10.00, 'validated', '2019-04-05', 33, 7)
+(22, 'pantalon', 'levis jean', 56.00, 'validated', '2019-03-12', 56, 5),
+(23, 'pantalon', 'jean noir', 34.00, 'validated', '2019-02-01', 55, 5),
+(24, 'auto', 'près de vieux montreal, 3 portes', 1500.00, 'waiting', '2019-01-17', 62, 1),
+(25, 'futon', 'couleur blanche', 30.00, 'waiting', '2019-01-28', 65, 2),
+(26, 'vaisselle', 'cuiller en argent', 70.00, 'waiting', '2019-02-09', 11, 2),
+(27, 'vaisselle', 'baguette en argent', 100.00, 'waiting', '2019-02-16', 12, 2),
+(28, 'literie', 'oreiller vert', 20.00, 'validated', '2019-04-07', 13, 7),
+(29, 'literie', 'couverture', 100.00, 'validated', '2019-01-10', 14, 7),
+(30, 'vaisselle', 'assiette à pain', 22.00, 'validated', '2019-04-22', 11, 2),
+(31, 'chaussure', 'bebe flip-flop', 30.00, 'validated', '2019-03-28', 51, 3),
+(32, 'table de bebe', 'table de bebe', 20.00, 'validated', '2019-04-12', 52, 4),
+(33, 'jouet', 'jouet interactif', 30.00, 'validated', '2019-03-20', 55, 4),
+(34, 'fauteuil', 'fauteuil de bebe', 70.00,'validated', '2019-02-19', 56, 2),
+(35, 'lit', 'lit de bebe', 100.00, 'estimated', '2019-04-09', 43, 2),
+(36, 'vetements', '2 pantalons et 2 chandails', 20.00, 'estimated', '2019-02-06', 33, 5),
+(37, 'vetements', '5 vetements', 20.00, 'estimated', '2019-01-25', 36, 5),
+(38, 'jeu de societe', 'blocus game', 10.00, 'estimated', '2019-03-25', 66, 7),
+(39, 'jeu de societe', 'opération game', 10.00, 'waiting', '2019-02-27', 65, 7),
+(40, 'jeu de societe', 'connect 4 game', 15.00, 'waiting', '2019-04-28', 71, 7),
+(41, 'jeu de carte', 'uno card game', 4.00, 'validated', '2019-01-27', 73, 7)
+(42, 'jeu de carte', 'melissa et doug', 20.00, 'validated', '2019-01-09', 72, 7),
+(43, 'maillot de bain', 'neuf', 30.00, 'validated', '2019-01-12', 6, 6),
+(44, 'base guitar', 'electric bass guitar', 70.00, 'validated', '2019-03-06', 43, 7),
+(45, 'speaker', 'vintage speaker', 150.00, 'estimated', '2019-02-19', 42, 7),
+(46, 'guitar', 'fendre elec-guitar', 600.00, 'validated', '2019-01-16', 33, 7),
+(47, 'voiture', 'hyundai elantra 50dollar par jour', 50.00, 'validated', '2019-03-12', 74, 1),
+(48, 'artwork', 'pop art framed ready to hang', 30.00, 'refused', '2019-04-01', 11, 2),
+(49, 'lampe', '30*20*40 lampe de lit', 30.00, 'refused', '2019-01-02', 6, 2),
+(50, 'armoire', 'wardrobe cabinet', 79.00, 'validated', '2019-03-09', 6, 2),
+(51, 'divan', 'très peu utilise, état comme neuf', 50.00, 'validated', '2019-04-04', 75, 2),
+(52, 'paire de ciseaux', 'legerement utilise', 74.81, 'validated', '2019-02-06', 64, 7),
+(53, 'etui a crayons', 'dans son emballage original', 463.71, 'validated', '2019-01-03', 67, 7),
+(54, 'gomme a effacer', 'dans son emballage original', 340.17, 'validated', '2019-02-06', 28, 7),
+(55, 'gomme a effacer', 'ayant apartenu a une celebrite', 443.54, 'validated', '2019-04-22', 1, 7),
+(56, 'surligneur', 'a super bon prix', 473.5, 'validated', '2019-02-13', 61, 7),
+(57, 'paire de ciseaux', 'ayant apartenu a une celebrite', 76.76, 'validated', '2019-04-10', 42, 7),
+(58, 'etui a crayons', 'dans son emballage original', 158.59, 'validated', '2019-04-27', 75, 7),
+(59, 'montre', 'dans son emballage original', 82.35, 'validated', '2019-02-09', 61, 7),
+(60, 'porte-cles', 'comme neuf', 290.61, 'validated', '2019-02-20', 52, 7),
+(61, 'cahier de notes', 'comme neuf', 421.03, 'validated', '2019-04-20', 56, 7),
+(62, 'serviette', 'comme neuf', 59.96, 'validated', '2019-04-28', 11, 7),
+(63, 'serviette', 'details sur demande', 142.74, 'validated', '2019-02-23', 58, 7),
+(64, 'etui a crayons', 'legerement utilise', 74.26, 'validated', '2019-01-18', 54, 7),
+(65, 'serviette', 'dans son emballage original', 109.60, 'validated', '2019-02-16', 4, 7),
+(66, 'porte-cles', 'ayant jamais servi', 429.38, 'validated', '2019-03-09', 21, 7),
+(67, 'montre', 'ayant apartenu a une celebrite', 99.86, 'validated', '2019-01-10', 3, 7),
+(68, 'gomme a effacer', 'ayant apartenu a une celebrite', 333.07, 'validated', '2019-04-11', 53, 7),
+(69, 'gomme a effacer', 'a super bon prix', 460.96, 'validated', '2019-03-09', 56, 7),
+(70, 'surligneur', 'comme neuf', 156.90, 'validated', '2019-04-23', 10, 7),
+(71, 'porte-cles', 'doit etre vendu', 133.03, 'validated', '2019-02-25', 6, 7);
 
 
 --ici aussi la date au lieu de timestemp, et attention, la cle etrangere pour produit a ete changer pour annonce
