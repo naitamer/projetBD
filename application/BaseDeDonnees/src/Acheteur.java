@@ -31,6 +31,7 @@ public class Acheteur {
         f.setLocationRelativeTo(null);
         f.setResizable(false);
         f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel pRechercher_Prodiut = new JPanel();
         String title = "Rechercher un produit";

@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.sql.*;
 
 /**
@@ -7,8 +8,8 @@ public class ConnectionBD {
     public static void main(String[] args) {
         //final ChoisirUtilisateur UI1 = new ChoisirUtilisateur();
         int id = 0;
-        final Acheteur UI3 = new Acheteur(id);
-        //final Annonceur UI2 = new Annonceur(id);
+        //final Acheteur UI3 = new Acheteur(id);
+        final Annonceur UI2 = new Annonceur(id);
 
     }
     public static Connection connectTobd()  {
